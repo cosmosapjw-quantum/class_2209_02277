@@ -11,6 +11,11 @@
 
 #define _set_source_(index) ppt->sources[index_md][index_ic * ppt->tp_size[index_md] + index][index_tau * ppt->k_size[index_md] + index_k]
 
+// #mod
+#define _Mpc_over_m_ 3.085677581282e22  /**< conversion factor from meters to megaparsecs */
+/* remark: CAMB uses 3.085678e22: good to know if you want to compare  with high accuracy */
+#define _G_ 6.67428e-11             /**< Newton constant in m^3/Kg/s^2 */
+
 /**
  * flags for various approximation schemes
  * (tca = tight-coupling approximation,
@@ -283,10 +288,6 @@ struct perturbations
      to avoid the integration by part that would reduce the source to
      a single term) */
 
-  // scalar field vars #mod
-  int index_tp_weyl; // weyl scalar field
-  int index_tp_weyldot; // weyl scalar field time derivative
-
   int index_tp_t0; /**< index value for temperature (j=0 term) */
   int index_tp_t1; /**< index value for temperature (j=1 term) */
   int index_tp_t2; /**< index value for temperature (j=2 term) */
@@ -304,6 +305,11 @@ struct perturbations
   int index_tp_delta_dr; /**< index value for delta of decay radiation */
   int index_tp_delta_ur; /**< index value for delta of ultra-relativistic neutrinos/relics */
   int index_tp_delta_idr; /**< index value for delta of interacting dark radiation */
+
+  // scalar field vars #mod
+  int index_tp_weyl; // weyl scalar field
+  int index_tp_weyldot; // weyl scalar field time derivative
+
   int index_tp_delta_ncdm1; /**< index value for delta of first non-cold dark matter species (e.g. massive neutrinos) */
   int index_tp_perturbed_recombination_delta_temp;		/**< Gas temperature perturbation */
   int index_tp_perturbed_recombination_delta_chi;		/**< Inionization fraction perturbation */
@@ -465,10 +471,6 @@ struct perturbations
 struct perturbations_vector
 {
 
-  // scalar field vars #mod
-  int index_pt_weyl; // weyl scalar field
-  int index_pt_weyldot; // weyl scalar field time derivative
-
   int index_pt_delta_g;   /**< photon density */
   int index_pt_theta_g;   /**< photon velocity */
   int index_pt_shear_g;   /**< photon shear */
@@ -498,6 +500,11 @@ struct perturbations_vector
   int index_pt_l3_ur;    /**< l=3 of ultra-relativistic neutrinos/relics */
   int l_max_ur;          /**< max momentum in Boltzmann hierarchy (at least 3) */
   int index_pt_delta_idr; /**< density of interacting dark radiation */
+
+  // scalar field vars #mod
+  int index_pt_weyl; // weyl scalar field
+  int index_pt_weyldot; // weyl scalar field time derivative
+
   int index_pt_theta_idr; /**< velocity of interacting dark radiation */
   int index_pt_shear_idr; /**< shear of interacting dark radiation */
   int index_pt_l3_idr;    /**< l=3 of interacting dark radiation */
