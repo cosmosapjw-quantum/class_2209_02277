@@ -230,10 +230,6 @@ cdef extern from "class.h":
         short has_source_H_T_Nb_prime
         short has_source_k2gamma_Nb
 
-        # #mod
-        int index_tp_weyl
-        int index_tp_weyldot
-
         int index_tp_t0
         int index_tp_t1
         int index_tp_t2
@@ -241,6 +237,9 @@ cdef extern from "class.h":
         int index_tp_delta_m
         int index_tp_delta_cb
         int index_tp_delta_tot
+        # #mod
+        int index_tp_weyl
+        int index_tp_weyldot
         int index_tp_delta_g
         int index_tp_delta_b
         int index_tp_delta_cdm

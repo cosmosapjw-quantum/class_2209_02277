@@ -295,6 +295,9 @@ struct perturbations
   int index_tp_delta_m; /**< index value for matter density fluctuation */
   int index_tp_delta_cb; /**< index value for delta cb */
   int index_tp_delta_tot; /**< index value for total density fluctuation */
+  // scalar field vars #mod
+  int index_tp_weyl; // weyl scalar field
+  int index_tp_weyldot; // weyl scalar field time derivative
   int index_tp_delta_g;   /**< index value for delta of gammas */
   int index_tp_delta_b;   /**< index value for delta of baryons */
   int index_tp_delta_cdm; /**< index value for delta of cold dark matter */
@@ -305,10 +308,6 @@ struct perturbations
   int index_tp_delta_dr; /**< index value for delta of decay radiation */
   int index_tp_delta_ur; /**< index value for delta of ultra-relativistic neutrinos/relics */
   int index_tp_delta_idr; /**< index value for delta of interacting dark radiation */
-
-  // scalar field vars #mod
-  int index_tp_weyl; // weyl scalar field
-  int index_tp_weyldot; // weyl scalar field time derivative
 
   int index_tp_delta_ncdm1; /**< index value for delta of first non-cold dark matter species (e.g. massive neutrinos) */
   int index_tp_perturbed_recombination_delta_temp;		/**< Gas temperature perturbation */
@@ -470,7 +469,9 @@ struct perturbations
 
 struct perturbations_vector
 {
-
+  // scalar field vars #mod
+  int index_pt_weyl; // weyl scalar field
+  int index_pt_weyldot; // weyl scalar field time derivative
   int index_pt_delta_g;   /**< photon density */
   int index_pt_theta_g;   /**< photon velocity */
   int index_pt_shear_g;   /**< photon shear */
@@ -500,10 +501,6 @@ struct perturbations_vector
   int index_pt_l3_ur;    /**< l=3 of ultra-relativistic neutrinos/relics */
   int l_max_ur;          /**< max momentum in Boltzmann hierarchy (at least 3) */
   int index_pt_delta_idr; /**< density of interacting dark radiation */
-
-  // scalar field vars #mod
-  int index_pt_weyl; // weyl scalar field
-  int index_pt_weyldot; // weyl scalar field time derivative
 
   int index_pt_theta_idr; /**< velocity of interacting dark radiation */
   int index_pt_shear_idr; /**< shear of interacting dark radiation */

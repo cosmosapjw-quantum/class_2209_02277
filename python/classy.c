@@ -2765,6 +2765,7 @@ static const char __pyx_k_sqrt[] = "sqrt";
 static const char __pyx_k_step[] = "step";
 static const char __pyx_k_stop[] = "stop";
 static const char __pyx_k_test[] = "__test__";
+static const char __pyx_k_weyl[] = "weyl";
 static const char __pyx_k_y_sd[] = "y_sd";
 static const char __pyx_k_z_eq[] = "z_eq";
 static const char __pyx_k_ASCII[] = "ASCII";
@@ -2876,6 +2877,7 @@ static const char __pyx_k_theta_b[] = "theta_b";
 static const char __pyx_k_theta_g[] = "theta_g";
 static const char __pyx_k_theta_m[] = "theta_m";
 static const char __pyx_k_version[] = "__version__";
+static const char __pyx_k_weyldot[] = "weyldot";
 static const char __pyx_k_Ellipsis[] = "Ellipsis";
 static const char __pyx_k_bad_call[] = "bad call";
 static const char __pyx_k_boundary[] = "boundary";
@@ -3440,6 +3442,8 @@ static PyObject *__pyx_n_s_version;
 static PyObject *__pyx_n_s_version_info;
 static PyObject *__pyx_n_s_viewdictitems;
 static PyObject *__pyx_n_s_viewitems;
+static PyObject *__pyx_n_u_weyl;
+static PyObject *__pyx_n_u_weyldot;
 static PyObject *__pyx_n_u_xi_idr;
 static PyObject *__pyx_n_s_xrange;
 static PyObject *__pyx_n_u_y_sd;
@@ -40919,7 +40923,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  *         if self.pt.has_source_delta_cb:
  *             indices.append(self.pt.index_tp_delta_cb)             # <<<<<<<<<<<<<<
  *             names.append("delta_cb")
- *         if self.pt.has_source_delta_g:
+ *         #mod
  */
     __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_cb); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2792, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -40930,8 +40934,8 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  *         if self.pt.has_source_delta_cb:
  *             indices.append(self.pt.index_tp_delta_cb)
  *             names.append("delta_cb")             # <<<<<<<<<<<<<<
+ *         #mod
  *         if self.pt.has_source_delta_g:
- *             indices.append(self.pt.index_tp_delta_g)
  */
     __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_cb); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2793, __pyx_L1_error)
 
@@ -40944,9 +40948,89 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2794
- *             indices.append(self.pt.index_tp_delta_cb)
+  /* "classy.pyx":2795
  *             names.append("delta_cb")
+ *         #mod
+ *         if self.pt.has_source_delta_g:             # <<<<<<<<<<<<<<
+ *             indices.append(self.pt.index_tp_weyl)
+ *             names.append("weyl")
+ */
+  __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_g != 0);
+  if (__pyx_t_15) {
+
+    /* "classy.pyx":2796
+ *         #mod
+ *         if self.pt.has_source_delta_g:
+ *             indices.append(self.pt.index_tp_weyl)             # <<<<<<<<<<<<<<
+ *             names.append("weyl")
+ *         if self.pt.has_source_delta_g:
+ */
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_weyl); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2796, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2796, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "classy.pyx":2797
+ *         if self.pt.has_source_delta_g:
+ *             indices.append(self.pt.index_tp_weyl)
+ *             names.append("weyl")             # <<<<<<<<<<<<<<
+ *         if self.pt.has_source_delta_g:
+ *             indices.append(self.pt.index_tp_weyldot)
+ */
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_weyl); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2797, __pyx_L1_error)
+
+    /* "classy.pyx":2795
+ *             names.append("delta_cb")
+ *         #mod
+ *         if self.pt.has_source_delta_g:             # <<<<<<<<<<<<<<
+ *             indices.append(self.pt.index_tp_weyl)
+ *             names.append("weyl")
+ */
+  }
+
+  /* "classy.pyx":2798
+ *             indices.append(self.pt.index_tp_weyl)
+ *             names.append("weyl")
+ *         if self.pt.has_source_delta_g:             # <<<<<<<<<<<<<<
+ *             indices.append(self.pt.index_tp_weyldot)
+ *             names.append("weyldot")
+ */
+  __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_g != 0);
+  if (__pyx_t_15) {
+
+    /* "classy.pyx":2799
+ *             names.append("weyl")
+ *         if self.pt.has_source_delta_g:
+ *             indices.append(self.pt.index_tp_weyldot)             # <<<<<<<<<<<<<<
+ *             names.append("weyldot")
+ *         if self.pt.has_source_delta_g:
+ */
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_weyldot); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2799, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2799, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "classy.pyx":2800
+ *         if self.pt.has_source_delta_g:
+ *             indices.append(self.pt.index_tp_weyldot)
+ *             names.append("weyldot")             # <<<<<<<<<<<<<<
+ *         if self.pt.has_source_delta_g:
+ *             indices.append(self.pt.index_tp_delta_g)
+ */
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_weyldot); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2800, __pyx_L1_error)
+
+    /* "classy.pyx":2798
+ *             indices.append(self.pt.index_tp_weyl)
+ *             names.append("weyl")
+ *         if self.pt.has_source_delta_g:             # <<<<<<<<<<<<<<
+ *             indices.append(self.pt.index_tp_weyldot)
+ *             names.append("weyldot")
+ */
+  }
+
+  /* "classy.pyx":2801
+ *             indices.append(self.pt.index_tp_weyldot)
+ *             names.append("weyldot")
  *         if self.pt.has_source_delta_g:             # <<<<<<<<<<<<<<
  *             indices.append(self.pt.index_tp_delta_g)
  *             names.append("delta_g")
@@ -40954,37 +41038,37 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_g != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2795
- *             names.append("delta_cb")
+    /* "classy.pyx":2802
+ *             names.append("weyldot")
  *         if self.pt.has_source_delta_g:
  *             indices.append(self.pt.index_tp_delta_g)             # <<<<<<<<<<<<<<
  *             names.append("delta_g")
  *         if self.pt.has_source_delta_b:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_g); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2795, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_g); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2802, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2795, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2802, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2796
+    /* "classy.pyx":2803
  *         if self.pt.has_source_delta_g:
  *             indices.append(self.pt.index_tp_delta_g)
  *             names.append("delta_g")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_b:
  *             indices.append(self.pt.index_tp_delta_b)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_g); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2796, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_g); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2803, __pyx_L1_error)
 
-    /* "classy.pyx":2794
- *             indices.append(self.pt.index_tp_delta_cb)
- *             names.append("delta_cb")
+    /* "classy.pyx":2801
+ *             indices.append(self.pt.index_tp_weyldot)
+ *             names.append("weyldot")
  *         if self.pt.has_source_delta_g:             # <<<<<<<<<<<<<<
  *             indices.append(self.pt.index_tp_delta_g)
  *             names.append("delta_g")
  */
   }
 
-  /* "classy.pyx":2797
+  /* "classy.pyx":2804
  *             indices.append(self.pt.index_tp_delta_g)
  *             names.append("delta_g")
  *         if self.pt.has_source_delta_b:             # <<<<<<<<<<<<<<
@@ -40994,28 +41078,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_b != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2798
+    /* "classy.pyx":2805
  *             names.append("delta_g")
  *         if self.pt.has_source_delta_b:
  *             indices.append(self.pt.index_tp_delta_b)             # <<<<<<<<<<<<<<
  *             names.append("delta_b")
  *         if self.pt.has_source_delta_cdm:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_b); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2798, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_b); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2805, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2798, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2805, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2799
+    /* "classy.pyx":2806
  *         if self.pt.has_source_delta_b:
  *             indices.append(self.pt.index_tp_delta_b)
  *             names.append("delta_b")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_cdm:
  *             indices.append(self.pt.index_tp_delta_cdm)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_b); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2799, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_b); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2806, __pyx_L1_error)
 
-    /* "classy.pyx":2797
+    /* "classy.pyx":2804
  *             indices.append(self.pt.index_tp_delta_g)
  *             names.append("delta_g")
  *         if self.pt.has_source_delta_b:             # <<<<<<<<<<<<<<
@@ -41024,7 +41108,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2800
+  /* "classy.pyx":2807
  *             indices.append(self.pt.index_tp_delta_b)
  *             names.append("delta_b")
  *         if self.pt.has_source_delta_cdm:             # <<<<<<<<<<<<<<
@@ -41034,28 +41118,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_cdm != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2801
+    /* "classy.pyx":2808
  *             names.append("delta_b")
  *         if self.pt.has_source_delta_cdm:
  *             indices.append(self.pt.index_tp_delta_cdm)             # <<<<<<<<<<<<<<
  *             names.append("delta_cdm")
  *         if self.pt.has_source_delta_idm:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_cdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2801, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_cdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2808, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2801, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2808, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2802
+    /* "classy.pyx":2809
  *         if self.pt.has_source_delta_cdm:
  *             indices.append(self.pt.index_tp_delta_cdm)
  *             names.append("delta_cdm")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_idm:
  *             indices.append(self.pt.index_tp_delta_idm)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_cdm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2802, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_cdm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2809, __pyx_L1_error)
 
-    /* "classy.pyx":2800
+    /* "classy.pyx":2807
  *             indices.append(self.pt.index_tp_delta_b)
  *             names.append("delta_b")
  *         if self.pt.has_source_delta_cdm:             # <<<<<<<<<<<<<<
@@ -41064,7 +41148,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2803
+  /* "classy.pyx":2810
  *             indices.append(self.pt.index_tp_delta_cdm)
  *             names.append("delta_cdm")
  *         if self.pt.has_source_delta_idm:             # <<<<<<<<<<<<<<
@@ -41074,28 +41158,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_idm != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2804
+    /* "classy.pyx":2811
  *             names.append("delta_cdm")
  *         if self.pt.has_source_delta_idm:
  *             indices.append(self.pt.index_tp_delta_idm)             # <<<<<<<<<<<<<<
  *             names.append("delta_idm")
  *         if self.pt.has_source_delta_dcdm:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_idm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2804, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_idm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2811, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2804, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2811, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2805
+    /* "classy.pyx":2812
  *         if self.pt.has_source_delta_idm:
  *             indices.append(self.pt.index_tp_delta_idm)
  *             names.append("delta_idm")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_dcdm:
  *             indices.append(self.pt.index_tp_delta_dcdm)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_idm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2805, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_idm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2812, __pyx_L1_error)
 
-    /* "classy.pyx":2803
+    /* "classy.pyx":2810
  *             indices.append(self.pt.index_tp_delta_cdm)
  *             names.append("delta_cdm")
  *         if self.pt.has_source_delta_idm:             # <<<<<<<<<<<<<<
@@ -41104,7 +41188,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2806
+  /* "classy.pyx":2813
  *             indices.append(self.pt.index_tp_delta_idm)
  *             names.append("delta_idm")
  *         if self.pt.has_source_delta_dcdm:             # <<<<<<<<<<<<<<
@@ -41114,28 +41198,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_dcdm != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2807
+    /* "classy.pyx":2814
  *             names.append("delta_idm")
  *         if self.pt.has_source_delta_dcdm:
  *             indices.append(self.pt.index_tp_delta_dcdm)             # <<<<<<<<<<<<<<
  *             names.append("delta_dcdm")
  *         if self.pt.has_source_delta_fld:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_dcdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2807, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_dcdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2814, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2807, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2814, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2808
+    /* "classy.pyx":2815
  *         if self.pt.has_source_delta_dcdm:
  *             indices.append(self.pt.index_tp_delta_dcdm)
  *             names.append("delta_dcdm")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_fld:
  *             indices.append(self.pt.index_tp_delta_fld)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_dcdm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2808, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_dcdm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2815, __pyx_L1_error)
 
-    /* "classy.pyx":2806
+    /* "classy.pyx":2813
  *             indices.append(self.pt.index_tp_delta_idm)
  *             names.append("delta_idm")
  *         if self.pt.has_source_delta_dcdm:             # <<<<<<<<<<<<<<
@@ -41144,7 +41228,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2809
+  /* "classy.pyx":2816
  *             indices.append(self.pt.index_tp_delta_dcdm)
  *             names.append("delta_dcdm")
  *         if self.pt.has_source_delta_fld:             # <<<<<<<<<<<<<<
@@ -41154,28 +41238,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_fld != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2810
+    /* "classy.pyx":2817
  *             names.append("delta_dcdm")
  *         if self.pt.has_source_delta_fld:
  *             indices.append(self.pt.index_tp_delta_fld)             # <<<<<<<<<<<<<<
  *             names.append("delta_fld")
  *         if self.pt.has_source_delta_scf:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_fld); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2810, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_fld); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2817, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2810, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2817, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2811
+    /* "classy.pyx":2818
  *         if self.pt.has_source_delta_fld:
  *             indices.append(self.pt.index_tp_delta_fld)
  *             names.append("delta_fld")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_scf:
  *             indices.append(self.pt.index_tp_delta_scf)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_fld); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2811, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_fld); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2818, __pyx_L1_error)
 
-    /* "classy.pyx":2809
+    /* "classy.pyx":2816
  *             indices.append(self.pt.index_tp_delta_dcdm)
  *             names.append("delta_dcdm")
  *         if self.pt.has_source_delta_fld:             # <<<<<<<<<<<<<<
@@ -41184,7 +41268,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2812
+  /* "classy.pyx":2819
  *             indices.append(self.pt.index_tp_delta_fld)
  *             names.append("delta_fld")
  *         if self.pt.has_source_delta_scf:             # <<<<<<<<<<<<<<
@@ -41194,28 +41278,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_scf != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2813
+    /* "classy.pyx":2820
  *             names.append("delta_fld")
  *         if self.pt.has_source_delta_scf:
  *             indices.append(self.pt.index_tp_delta_scf)             # <<<<<<<<<<<<<<
  *             names.append("delta_scf")
  *         if self.pt.has_source_delta_dr:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_scf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2813, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_scf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2820, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2813, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2820, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2814
+    /* "classy.pyx":2821
  *         if self.pt.has_source_delta_scf:
  *             indices.append(self.pt.index_tp_delta_scf)
  *             names.append("delta_scf")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_dr:
  *             indices.append(self.pt.index_tp_delta_dr)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_scf); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2814, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_scf); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2821, __pyx_L1_error)
 
-    /* "classy.pyx":2812
+    /* "classy.pyx":2819
  *             indices.append(self.pt.index_tp_delta_fld)
  *             names.append("delta_fld")
  *         if self.pt.has_source_delta_scf:             # <<<<<<<<<<<<<<
@@ -41224,7 +41308,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2815
+  /* "classy.pyx":2822
  *             indices.append(self.pt.index_tp_delta_scf)
  *             names.append("delta_scf")
  *         if self.pt.has_source_delta_dr:             # <<<<<<<<<<<<<<
@@ -41234,28 +41318,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_dr != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2816
+    /* "classy.pyx":2823
  *             names.append("delta_scf")
  *         if self.pt.has_source_delta_dr:
  *             indices.append(self.pt.index_tp_delta_dr)             # <<<<<<<<<<<<<<
  *             names.append("delta_dr")
  *         if self.pt.has_source_delta_ur:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_dr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2816, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_dr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2823, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2816, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2823, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2817
+    /* "classy.pyx":2824
  *         if self.pt.has_source_delta_dr:
  *             indices.append(self.pt.index_tp_delta_dr)
  *             names.append("delta_dr")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_ur:
  *             indices.append(self.pt.index_tp_delta_ur)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_dr); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2817, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_dr); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2824, __pyx_L1_error)
 
-    /* "classy.pyx":2815
+    /* "classy.pyx":2822
  *             indices.append(self.pt.index_tp_delta_scf)
  *             names.append("delta_scf")
  *         if self.pt.has_source_delta_dr:             # <<<<<<<<<<<<<<
@@ -41264,7 +41348,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2818
+  /* "classy.pyx":2825
  *             indices.append(self.pt.index_tp_delta_dr)
  *             names.append("delta_dr")
  *         if self.pt.has_source_delta_ur:             # <<<<<<<<<<<<<<
@@ -41274,28 +41358,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_ur != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2819
+    /* "classy.pyx":2826
  *             names.append("delta_dr")
  *         if self.pt.has_source_delta_ur:
  *             indices.append(self.pt.index_tp_delta_ur)             # <<<<<<<<<<<<<<
  *             names.append("delta_ur")
  *         if self.pt.has_source_delta_idr:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_ur); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2819, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_ur); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2826, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2819, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2826, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2820
+    /* "classy.pyx":2827
  *         if self.pt.has_source_delta_ur:
  *             indices.append(self.pt.index_tp_delta_ur)
  *             names.append("delta_ur")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_idr:
  *             indices.append(self.pt.index_tp_delta_idr)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_ur); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2820, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_ur); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2827, __pyx_L1_error)
 
-    /* "classy.pyx":2818
+    /* "classy.pyx":2825
  *             indices.append(self.pt.index_tp_delta_dr)
  *             names.append("delta_dr")
  *         if self.pt.has_source_delta_ur:             # <<<<<<<<<<<<<<
@@ -41304,7 +41388,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2821
+  /* "classy.pyx":2828
  *             indices.append(self.pt.index_tp_delta_ur)
  *             names.append("delta_ur")
  *         if self.pt.has_source_delta_idr:             # <<<<<<<<<<<<<<
@@ -41314,28 +41398,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_idr != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2822
+    /* "classy.pyx":2829
  *             names.append("delta_ur")
  *         if self.pt.has_source_delta_idr:
  *             indices.append(self.pt.index_tp_delta_idr)             # <<<<<<<<<<<<<<
  *             names.append("delta_idr")
  *         if self.pt.has_source_delta_ncdm:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_idr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2822, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_idr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2829, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2822, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2829, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2823
+    /* "classy.pyx":2830
  *         if self.pt.has_source_delta_idr:
  *             indices.append(self.pt.index_tp_delta_idr)
  *             names.append("delta_idr")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_delta_ncdm:
  *             for incdm in range(self.ba.N_ncdm):
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_idr); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2823, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_delta_idr); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2830, __pyx_L1_error)
 
-    /* "classy.pyx":2821
+    /* "classy.pyx":2828
  *             indices.append(self.pt.index_tp_delta_ur)
  *             names.append("delta_ur")
  *         if self.pt.has_source_delta_idr:             # <<<<<<<<<<<<<<
@@ -41344,7 +41428,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2824
+  /* "classy.pyx":2831
  *             indices.append(self.pt.index_tp_delta_idr)
  *             names.append("delta_idr")
  *         if self.pt.has_source_delta_ncdm:             # <<<<<<<<<<<<<<
@@ -41354,25 +41438,25 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_delta_ncdm != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2825
+    /* "classy.pyx":2832
  *             names.append("delta_idr")
  *         if self.pt.has_source_delta_ncdm:
  *             for incdm in range(self.ba.N_ncdm):             # <<<<<<<<<<<<<<
  *               indices.append(self.pt.index_tp_delta_ncdm1+incdm)
  *               names.append("delta_ncdm[{}]".format(incdm))
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->ba.N_ncdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2825, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->ba.N_ncdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2832, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2825, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2832, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
       __pyx_t_1 = __pyx_t_6; __Pyx_INCREF(__pyx_t_1); __pyx_t_19 = 0;
       __pyx_t_20 = NULL;
     } else {
-      __pyx_t_19 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2825, __pyx_L1_error)
+      __pyx_t_19 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2832, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_20 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 2825, __pyx_L1_error)
+      __pyx_t_20 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 2832, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     for (;;) {
@@ -41380,17 +41464,17 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
         if (likely(PyList_CheckExact(__pyx_t_1))) {
           if (__pyx_t_19 >= PyList_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_6); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2825, __pyx_L1_error)
+          __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_6); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2832, __pyx_L1_error)
           #else
-          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2825, __pyx_L1_error)
+          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2832, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           #endif
         } else {
           if (__pyx_t_19 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_6); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2825, __pyx_L1_error)
+          __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_6); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2832, __pyx_L1_error)
           #else
-          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2825, __pyx_L1_error)
+          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2832, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           #endif
         }
@@ -41400,7 +41484,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2825, __pyx_L1_error)
+            else __PYX_ERR(0, 2832, __pyx_L1_error)
           }
           break;
         }
@@ -41409,29 +41493,29 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
       __Pyx_XDECREF_SET(__pyx_v_incdm, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "classy.pyx":2826
+      /* "classy.pyx":2833
  *         if self.pt.has_source_delta_ncdm:
  *             for incdm in range(self.ba.N_ncdm):
  *               indices.append(self.pt.index_tp_delta_ncdm1+incdm)             # <<<<<<<<<<<<<<
  *               names.append("delta_ncdm[{}]".format(incdm))
  *         if self.pt.has_source_theta_tot:
  */
-      __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_ncdm1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2826, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_delta_ncdm1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2833, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_8 = PyNumber_Add(__pyx_t_6, __pyx_v_incdm); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2826, __pyx_L1_error)
+      __pyx_t_8 = PyNumber_Add(__pyx_t_6, __pyx_v_incdm); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2833, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_8); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2826, __pyx_L1_error)
+      __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_8); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2833, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "classy.pyx":2827
+      /* "classy.pyx":2834
  *             for incdm in range(self.ba.N_ncdm):
  *               indices.append(self.pt.index_tp_delta_ncdm1+incdm)
  *               names.append("delta_ncdm[{}]".format(incdm))             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_tot:
  *             indices.append(self.pt.index_tp_theta_tot)
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_delta_ncdm, __pyx_n_s_format); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2827, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_delta_ncdm, __pyx_n_s_format); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2834, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
@@ -41445,13 +41529,13 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
       }
       __pyx_t_8 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_v_incdm) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_incdm);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2827, __pyx_L1_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2834, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_t_8); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2827, __pyx_L1_error)
+      __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_t_8); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2834, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "classy.pyx":2825
+      /* "classy.pyx":2832
  *             names.append("delta_idr")
  *         if self.pt.has_source_delta_ncdm:
  *             for incdm in range(self.ba.N_ncdm):             # <<<<<<<<<<<<<<
@@ -41461,7 +41545,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2824
+    /* "classy.pyx":2831
  *             indices.append(self.pt.index_tp_delta_idr)
  *             names.append("delta_idr")
  *         if self.pt.has_source_delta_ncdm:             # <<<<<<<<<<<<<<
@@ -41470,7 +41554,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2828
+  /* "classy.pyx":2835
  *               indices.append(self.pt.index_tp_delta_ncdm1+incdm)
  *               names.append("delta_ncdm[{}]".format(incdm))
  *         if self.pt.has_source_theta_tot:             # <<<<<<<<<<<<<<
@@ -41480,28 +41564,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_tot != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2829
+    /* "classy.pyx":2836
  *               names.append("delta_ncdm[{}]".format(incdm))
  *         if self.pt.has_source_theta_tot:
  *             indices.append(self.pt.index_tp_theta_tot)             # <<<<<<<<<<<<<<
  *             names.append("theta_tot")
  *         if self.pt.has_source_theta_m:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_tot); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2829, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_tot); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2836, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2829, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2836, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2830
+    /* "classy.pyx":2837
  *         if self.pt.has_source_theta_tot:
  *             indices.append(self.pt.index_tp_theta_tot)
  *             names.append("theta_tot")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_m:
  *             indices.append(self.pt.index_tp_theta_m)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_tot); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2830, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_tot); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2837, __pyx_L1_error)
 
-    /* "classy.pyx":2828
+    /* "classy.pyx":2835
  *               indices.append(self.pt.index_tp_delta_ncdm1+incdm)
  *               names.append("delta_ncdm[{}]".format(incdm))
  *         if self.pt.has_source_theta_tot:             # <<<<<<<<<<<<<<
@@ -41510,7 +41594,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2831
+  /* "classy.pyx":2838
  *             indices.append(self.pt.index_tp_theta_tot)
  *             names.append("theta_tot")
  *         if self.pt.has_source_theta_m:             # <<<<<<<<<<<<<<
@@ -41520,28 +41604,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_m != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2832
+    /* "classy.pyx":2839
  *             names.append("theta_tot")
  *         if self.pt.has_source_theta_m:
  *             indices.append(self.pt.index_tp_theta_m)             # <<<<<<<<<<<<<<
  *             names.append("theta_m")
  *         if self.pt.has_source_theta_cb:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2832, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2839, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2832, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2839, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2833
+    /* "classy.pyx":2840
  *         if self.pt.has_source_theta_m:
  *             indices.append(self.pt.index_tp_theta_m)
  *             names.append("theta_m")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_cb:
  *             indices.append(self.pt.index_tp_theta_cb)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_m); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2833, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_m); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2840, __pyx_L1_error)
 
-    /* "classy.pyx":2831
+    /* "classy.pyx":2838
  *             indices.append(self.pt.index_tp_theta_tot)
  *             names.append("theta_tot")
  *         if self.pt.has_source_theta_m:             # <<<<<<<<<<<<<<
@@ -41550,7 +41634,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2834
+  /* "classy.pyx":2841
  *             indices.append(self.pt.index_tp_theta_m)
  *             names.append("theta_m")
  *         if self.pt.has_source_theta_cb:             # <<<<<<<<<<<<<<
@@ -41560,28 +41644,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_cb != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2835
+    /* "classy.pyx":2842
  *             names.append("theta_m")
  *         if self.pt.has_source_theta_cb:
  *             indices.append(self.pt.index_tp_theta_cb)             # <<<<<<<<<<<<<<
  *             names.append("theta_cb")
  *         if self.pt.has_source_theta_g:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_cb); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2835, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_cb); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2842, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2835, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2842, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2836
+    /* "classy.pyx":2843
  *         if self.pt.has_source_theta_cb:
  *             indices.append(self.pt.index_tp_theta_cb)
  *             names.append("theta_cb")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_g:
  *             indices.append(self.pt.index_tp_theta_g)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_cb); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2836, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_cb); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2843, __pyx_L1_error)
 
-    /* "classy.pyx":2834
+    /* "classy.pyx":2841
  *             indices.append(self.pt.index_tp_theta_m)
  *             names.append("theta_m")
  *         if self.pt.has_source_theta_cb:             # <<<<<<<<<<<<<<
@@ -41590,7 +41674,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2837
+  /* "classy.pyx":2844
  *             indices.append(self.pt.index_tp_theta_cb)
  *             names.append("theta_cb")
  *         if self.pt.has_source_theta_g:             # <<<<<<<<<<<<<<
@@ -41600,28 +41684,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_g != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2838
+    /* "classy.pyx":2845
  *             names.append("theta_cb")
  *         if self.pt.has_source_theta_g:
  *             indices.append(self.pt.index_tp_theta_g)             # <<<<<<<<<<<<<<
  *             names.append("theta_g")
  *         if self.pt.has_source_theta_b:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_g); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2838, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_g); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2845, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2838, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2845, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2839
+    /* "classy.pyx":2846
  *         if self.pt.has_source_theta_g:
  *             indices.append(self.pt.index_tp_theta_g)
  *             names.append("theta_g")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_b:
  *             indices.append(self.pt.index_tp_theta_b)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_g); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2839, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_g); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2846, __pyx_L1_error)
 
-    /* "classy.pyx":2837
+    /* "classy.pyx":2844
  *             indices.append(self.pt.index_tp_theta_cb)
  *             names.append("theta_cb")
  *         if self.pt.has_source_theta_g:             # <<<<<<<<<<<<<<
@@ -41630,7 +41714,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2840
+  /* "classy.pyx":2847
  *             indices.append(self.pt.index_tp_theta_g)
  *             names.append("theta_g")
  *         if self.pt.has_source_theta_b:             # <<<<<<<<<<<<<<
@@ -41640,28 +41724,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_b != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2841
+    /* "classy.pyx":2848
  *             names.append("theta_g")
  *         if self.pt.has_source_theta_b:
  *             indices.append(self.pt.index_tp_theta_b)             # <<<<<<<<<<<<<<
  *             names.append("theta_b")
  *         if self.pt.has_source_theta_cdm:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_b); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2841, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_b); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2848, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2841, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2848, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2842
+    /* "classy.pyx":2849
  *         if self.pt.has_source_theta_b:
  *             indices.append(self.pt.index_tp_theta_b)
  *             names.append("theta_b")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_cdm:
  *             indices.append(self.pt.index_tp_theta_cdm)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_b); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2842, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_b); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2849, __pyx_L1_error)
 
-    /* "classy.pyx":2840
+    /* "classy.pyx":2847
  *             indices.append(self.pt.index_tp_theta_g)
  *             names.append("theta_g")
  *         if self.pt.has_source_theta_b:             # <<<<<<<<<<<<<<
@@ -41670,7 +41754,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2843
+  /* "classy.pyx":2850
  *             indices.append(self.pt.index_tp_theta_b)
  *             names.append("theta_b")
  *         if self.pt.has_source_theta_cdm:             # <<<<<<<<<<<<<<
@@ -41680,28 +41764,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_cdm != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2844
+    /* "classy.pyx":2851
  *             names.append("theta_b")
  *         if self.pt.has_source_theta_cdm:
  *             indices.append(self.pt.index_tp_theta_cdm)             # <<<<<<<<<<<<<<
  *             names.append("theta_cdm")
  *         if self.pt.has_source_theta_idm:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_cdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2844, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_cdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2851, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2844, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2851, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2845
+    /* "classy.pyx":2852
  *         if self.pt.has_source_theta_cdm:
  *             indices.append(self.pt.index_tp_theta_cdm)
  *             names.append("theta_cdm")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_idm:
  *             indices.append(self.pt.index_tp_theta_idm)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_cdm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2845, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_cdm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2852, __pyx_L1_error)
 
-    /* "classy.pyx":2843
+    /* "classy.pyx":2850
  *             indices.append(self.pt.index_tp_theta_b)
  *             names.append("theta_b")
  *         if self.pt.has_source_theta_cdm:             # <<<<<<<<<<<<<<
@@ -41710,7 +41794,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2846
+  /* "classy.pyx":2853
  *             indices.append(self.pt.index_tp_theta_cdm)
  *             names.append("theta_cdm")
  *         if self.pt.has_source_theta_idm:             # <<<<<<<<<<<<<<
@@ -41720,28 +41804,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_idm != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2847
+    /* "classy.pyx":2854
  *             names.append("theta_cdm")
  *         if self.pt.has_source_theta_idm:
  *             indices.append(self.pt.index_tp_theta_idm)             # <<<<<<<<<<<<<<
  *             names.append("theta_idm")
  *         if self.pt.has_source_theta_dcdm:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_idm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2847, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_idm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2854, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2847, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2854, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2848
+    /* "classy.pyx":2855
  *         if self.pt.has_source_theta_idm:
  *             indices.append(self.pt.index_tp_theta_idm)
  *             names.append("theta_idm")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_dcdm:
  *             indices.append(self.pt.index_tp_theta_dcdm)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_idm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2848, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_idm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2855, __pyx_L1_error)
 
-    /* "classy.pyx":2846
+    /* "classy.pyx":2853
  *             indices.append(self.pt.index_tp_theta_cdm)
  *             names.append("theta_cdm")
  *         if self.pt.has_source_theta_idm:             # <<<<<<<<<<<<<<
@@ -41750,7 +41834,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2849
+  /* "classy.pyx":2856
  *             indices.append(self.pt.index_tp_theta_idm)
  *             names.append("theta_idm")
  *         if self.pt.has_source_theta_dcdm:             # <<<<<<<<<<<<<<
@@ -41760,28 +41844,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_dcdm != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2850
+    /* "classy.pyx":2857
  *             names.append("theta_idm")
  *         if self.pt.has_source_theta_dcdm:
  *             indices.append(self.pt.index_tp_theta_dcdm)             # <<<<<<<<<<<<<<
  *             names.append("theta_dcdm")
  *         if self.pt.has_source_theta_fld:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_dcdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2850, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_dcdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2857, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2850, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2857, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2851
+    /* "classy.pyx":2858
  *         if self.pt.has_source_theta_dcdm:
  *             indices.append(self.pt.index_tp_theta_dcdm)
  *             names.append("theta_dcdm")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_fld:
  *             indices.append(self.pt.index_tp_theta_fld)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_dcdm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2851, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_dcdm); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2858, __pyx_L1_error)
 
-    /* "classy.pyx":2849
+    /* "classy.pyx":2856
  *             indices.append(self.pt.index_tp_theta_idm)
  *             names.append("theta_idm")
  *         if self.pt.has_source_theta_dcdm:             # <<<<<<<<<<<<<<
@@ -41790,7 +41874,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2852
+  /* "classy.pyx":2859
  *             indices.append(self.pt.index_tp_theta_dcdm)
  *             names.append("theta_dcdm")
  *         if self.pt.has_source_theta_fld:             # <<<<<<<<<<<<<<
@@ -41800,28 +41884,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_fld != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2853
+    /* "classy.pyx":2860
  *             names.append("theta_dcdm")
  *         if self.pt.has_source_theta_fld:
  *             indices.append(self.pt.index_tp_theta_fld)             # <<<<<<<<<<<<<<
  *             names.append("theta_fld")
  *         if self.pt.has_source_theta_scf:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_fld); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2853, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_fld); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2860, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2853, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2860, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2854
+    /* "classy.pyx":2861
  *         if self.pt.has_source_theta_fld:
  *             indices.append(self.pt.index_tp_theta_fld)
  *             names.append("theta_fld")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_scf:
  *             indices.append(self.pt.index_tp_theta_scf)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_fld); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2854, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_fld); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2861, __pyx_L1_error)
 
-    /* "classy.pyx":2852
+    /* "classy.pyx":2859
  *             indices.append(self.pt.index_tp_theta_dcdm)
  *             names.append("theta_dcdm")
  *         if self.pt.has_source_theta_fld:             # <<<<<<<<<<<<<<
@@ -41830,7 +41914,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2855
+  /* "classy.pyx":2862
  *             indices.append(self.pt.index_tp_theta_fld)
  *             names.append("theta_fld")
  *         if self.pt.has_source_theta_scf:             # <<<<<<<<<<<<<<
@@ -41840,28 +41924,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_scf != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2856
+    /* "classy.pyx":2863
  *             names.append("theta_fld")
  *         if self.pt.has_source_theta_scf:
  *             indices.append(self.pt.index_tp_theta_scf)             # <<<<<<<<<<<<<<
  *             names.append("theta_scf")
  *         if self.pt.has_source_theta_dr:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_scf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2856, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_scf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2863, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2856, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2863, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2857
+    /* "classy.pyx":2864
  *         if self.pt.has_source_theta_scf:
  *             indices.append(self.pt.index_tp_theta_scf)
  *             names.append("theta_scf")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_dr:
  *             indices.append(self.pt.index_tp_theta_dr)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_scf); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2857, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_scf); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2864, __pyx_L1_error)
 
-    /* "classy.pyx":2855
+    /* "classy.pyx":2862
  *             indices.append(self.pt.index_tp_theta_fld)
  *             names.append("theta_fld")
  *         if self.pt.has_source_theta_scf:             # <<<<<<<<<<<<<<
@@ -41870,7 +41954,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2858
+  /* "classy.pyx":2865
  *             indices.append(self.pt.index_tp_theta_scf)
  *             names.append("theta_scf")
  *         if self.pt.has_source_theta_dr:             # <<<<<<<<<<<<<<
@@ -41880,28 +41964,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_dr != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2859
+    /* "classy.pyx":2866
  *             names.append("theta_scf")
  *         if self.pt.has_source_theta_dr:
  *             indices.append(self.pt.index_tp_theta_dr)             # <<<<<<<<<<<<<<
  *             names.append("theta_dr")
  *         if self.pt.has_source_theta_ur:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_dr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2859, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_dr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2866, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2859, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2866, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2860
+    /* "classy.pyx":2867
  *         if self.pt.has_source_theta_dr:
  *             indices.append(self.pt.index_tp_theta_dr)
  *             names.append("theta_dr")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_ur:
  *             indices.append(self.pt.index_tp_theta_ur)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_dr); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2860, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_dr); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2867, __pyx_L1_error)
 
-    /* "classy.pyx":2858
+    /* "classy.pyx":2865
  *             indices.append(self.pt.index_tp_theta_scf)
  *             names.append("theta_scf")
  *         if self.pt.has_source_theta_dr:             # <<<<<<<<<<<<<<
@@ -41910,7 +41994,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2861
+  /* "classy.pyx":2868
  *             indices.append(self.pt.index_tp_theta_dr)
  *             names.append("theta_dr")
  *         if self.pt.has_source_theta_ur:             # <<<<<<<<<<<<<<
@@ -41920,28 +42004,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_ur != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2862
+    /* "classy.pyx":2869
  *             names.append("theta_dr")
  *         if self.pt.has_source_theta_ur:
  *             indices.append(self.pt.index_tp_theta_ur)             # <<<<<<<<<<<<<<
  *             names.append("theta_ur")
  *         if self.pt.has_source_theta_idr:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_ur); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2862, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_ur); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2869, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2862, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2869, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2863
+    /* "classy.pyx":2870
  *         if self.pt.has_source_theta_ur:
  *             indices.append(self.pt.index_tp_theta_ur)
  *             names.append("theta_ur")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_idr:
  *             indices.append(self.pt.index_tp_theta_idr)
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_ur); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2863, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_ur); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2870, __pyx_L1_error)
 
-    /* "classy.pyx":2861
+    /* "classy.pyx":2868
  *             indices.append(self.pt.index_tp_theta_dr)
  *             names.append("theta_dr")
  *         if self.pt.has_source_theta_ur:             # <<<<<<<<<<<<<<
@@ -41950,7 +42034,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2864
+  /* "classy.pyx":2871
  *             indices.append(self.pt.index_tp_theta_ur)
  *             names.append("theta_ur")
  *         if self.pt.has_source_theta_idr:             # <<<<<<<<<<<<<<
@@ -41960,28 +42044,28 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_idr != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2865
+    /* "classy.pyx":2872
  *             names.append("theta_ur")
  *         if self.pt.has_source_theta_idr:
  *             indices.append(self.pt.index_tp_theta_idr)             # <<<<<<<<<<<<<<
  *             names.append("theta_idr")
  *         if self.pt.has_source_theta_ncdm:
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_idr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2865, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_idr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2872, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2865, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_1); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2872, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2866
+    /* "classy.pyx":2873
  *         if self.pt.has_source_theta_idr:
  *             indices.append(self.pt.index_tp_theta_idr)
  *             names.append("theta_idr")             # <<<<<<<<<<<<<<
  *         if self.pt.has_source_theta_ncdm:
  *             for incdm in range(self.ba.N_ncdm):
  */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_idr); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2866, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_n_u_theta_idr); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2873, __pyx_L1_error)
 
-    /* "classy.pyx":2864
+    /* "classy.pyx":2871
  *             indices.append(self.pt.index_tp_theta_ur)
  *             names.append("theta_ur")
  *         if self.pt.has_source_theta_idr:             # <<<<<<<<<<<<<<
@@ -41990,7 +42074,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2867
+  /* "classy.pyx":2874
  *             indices.append(self.pt.index_tp_theta_idr)
  *             names.append("theta_idr")
  *         if self.pt.has_source_theta_ncdm:             # <<<<<<<<<<<<<<
@@ -42000,25 +42084,25 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_15 = (__pyx_v_self->pt.has_source_theta_ncdm != 0);
   if (__pyx_t_15) {
 
-    /* "classy.pyx":2868
+    /* "classy.pyx":2875
  *             names.append("theta_idr")
  *         if self.pt.has_source_theta_ncdm:
  *             for incdm in range(self.ba.N_ncdm):             # <<<<<<<<<<<<<<
  *               indices.append(self.pt.index_tp_theta_ncdm1+incdm)
  *               names.append("theta_ncdm[{}]".format(incdm))
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->ba.N_ncdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2868, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->ba.N_ncdm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2875, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2868, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2875, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (likely(PyList_CheckExact(__pyx_t_8)) || PyTuple_CheckExact(__pyx_t_8)) {
       __pyx_t_1 = __pyx_t_8; __Pyx_INCREF(__pyx_t_1); __pyx_t_19 = 0;
       __pyx_t_20 = NULL;
     } else {
-      __pyx_t_19 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2868, __pyx_L1_error)
+      __pyx_t_19 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2875, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_20 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 2868, __pyx_L1_error)
+      __pyx_t_20 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 2875, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     for (;;) {
@@ -42026,17 +42110,17 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
         if (likely(PyList_CheckExact(__pyx_t_1))) {
           if (__pyx_t_19 >= PyList_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_8 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_8); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2868, __pyx_L1_error)
+          __pyx_t_8 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_8); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2875, __pyx_L1_error)
           #else
-          __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2868, __pyx_L1_error)
+          __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2875, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           #endif
         } else {
           if (__pyx_t_19 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_8); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2868, __pyx_L1_error)
+          __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_8); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2875, __pyx_L1_error)
           #else
-          __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2868, __pyx_L1_error)
+          __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2875, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           #endif
         }
@@ -42046,7 +42130,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 2868, __pyx_L1_error)
+            else __PYX_ERR(0, 2875, __pyx_L1_error)
           }
           break;
         }
@@ -42055,29 +42139,29 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
       __Pyx_XDECREF_SET(__pyx_v_incdm, __pyx_t_8);
       __pyx_t_8 = 0;
 
-      /* "classy.pyx":2869
+      /* "classy.pyx":2876
  *         if self.pt.has_source_theta_ncdm:
  *             for incdm in range(self.ba.N_ncdm):
  *               indices.append(self.pt.index_tp_theta_ncdm1+incdm)             # <<<<<<<<<<<<<<
  *               names.append("theta_ncdm[{}]".format(incdm))
  * 
  */
-      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_ncdm1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2869, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_self->pt.index_tp_theta_ncdm1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2876, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_6 = PyNumber_Add(__pyx_t_8, __pyx_v_incdm); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2869, __pyx_L1_error)
+      __pyx_t_6 = PyNumber_Add(__pyx_t_8, __pyx_v_incdm); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2876, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_6); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2869, __pyx_L1_error)
+      __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_indices, __pyx_t_6); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2876, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "classy.pyx":2870
+      /* "classy.pyx":2877
  *             for incdm in range(self.ba.N_ncdm):
  *               indices.append(self.pt.index_tp_theta_ncdm1+incdm)
  *               names.append("theta_ncdm[{}]".format(incdm))             # <<<<<<<<<<<<<<
  * 
  *         for index_type, name in zip(indices, names):
  */
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_theta_ncdm, __pyx_n_s_format); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2870, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_theta_ncdm, __pyx_n_s_format); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2877, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_7 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_8))) {
@@ -42091,13 +42175,13 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
       }
       __pyx_t_6 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_7, __pyx_v_incdm) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_v_incdm);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2870, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2877, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_t_6); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2870, __pyx_L1_error)
+      __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_names, __pyx_t_6); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 2877, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "classy.pyx":2868
+      /* "classy.pyx":2875
  *             names.append("theta_idr")
  *         if self.pt.has_source_theta_ncdm:
  *             for incdm in range(self.ba.N_ncdm):             # <<<<<<<<<<<<<<
@@ -42107,7 +42191,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "classy.pyx":2867
+    /* "classy.pyx":2874
  *             indices.append(self.pt.index_tp_theta_idr)
  *             names.append("theta_idr")
  *         if self.pt.has_source_theta_ncdm:             # <<<<<<<<<<<<<<
@@ -42116,14 +42200,14 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
  */
   }
 
-  /* "classy.pyx":2872
+  /* "classy.pyx":2879
  *               names.append("theta_ncdm[{}]".format(incdm))
  * 
  *         for index_type, name in zip(indices, names):             # <<<<<<<<<<<<<<
  *             tmparray = np.empty((k_size,tau_size))
  *             for index_k in range(k_size):
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2872, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2879, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_indices);
   __Pyx_GIVEREF(__pyx_v_indices);
@@ -42131,16 +42215,16 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __Pyx_INCREF(__pyx_v_names);
   __Pyx_GIVEREF(__pyx_v_names);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_names);
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_zip, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2872, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_zip, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2879, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
     __pyx_t_1 = __pyx_t_6; __Pyx_INCREF(__pyx_t_1); __pyx_t_19 = 0;
     __pyx_t_20 = NULL;
   } else {
-    __pyx_t_19 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2872, __pyx_L1_error)
+    __pyx_t_19 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2879, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_20 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 2872, __pyx_L1_error)
+    __pyx_t_20 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 2879, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   for (;;) {
@@ -42148,17 +42232,17 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_19 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_6); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2872, __pyx_L1_error)
+        __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_6); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2879, __pyx_L1_error)
         #else
-        __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2872, __pyx_L1_error)
+        __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2879, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         #endif
       } else {
         if (__pyx_t_19 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_6); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2872, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_19); __Pyx_INCREF(__pyx_t_6); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 2879, __pyx_L1_error)
         #else
-        __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2872, __pyx_L1_error)
+        __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2879, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         #endif
       }
@@ -42168,7 +42252,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 2872, __pyx_L1_error)
+          else __PYX_ERR(0, 2879, __pyx_L1_error)
         }
         break;
       }
@@ -42180,7 +42264,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 2872, __pyx_L1_error)
+        __PYX_ERR(0, 2879, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -42193,56 +42277,56 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
       __Pyx_INCREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_t_7);
       #else
-      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2872, __pyx_L1_error)
+      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2879, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2872, __pyx_L1_error)
+      __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2879, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       #endif
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_5 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2872, __pyx_L1_error)
+      __pyx_t_5 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2879, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_21 = Py_TYPE(__pyx_t_5)->tp_iternext;
-      index = 0; __pyx_t_8 = __pyx_t_21(__pyx_t_5); if (unlikely(!__pyx_t_8)) goto __pyx_L53_unpacking_failed;
+      index = 0; __pyx_t_8 = __pyx_t_21(__pyx_t_5); if (unlikely(!__pyx_t_8)) goto __pyx_L55_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_8);
-      index = 1; __pyx_t_7 = __pyx_t_21(__pyx_t_5); if (unlikely(!__pyx_t_7)) goto __pyx_L53_unpacking_failed;
+      index = 1; __pyx_t_7 = __pyx_t_21(__pyx_t_5); if (unlikely(!__pyx_t_7)) goto __pyx_L55_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_7);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_21(__pyx_t_5), 2) < 0) __PYX_ERR(0, 2872, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_21(__pyx_t_5), 2) < 0) __PYX_ERR(0, 2879, __pyx_L1_error)
       __pyx_t_21 = NULL;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      goto __pyx_L54_unpacking_done;
-      __pyx_L53_unpacking_failed:;
+      goto __pyx_L56_unpacking_done;
+      __pyx_L55_unpacking_failed:;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_21 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 2872, __pyx_L1_error)
-      __pyx_L54_unpacking_done:;
+      __PYX_ERR(0, 2879, __pyx_L1_error)
+      __pyx_L56_unpacking_done:;
     }
-    __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_8); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2872, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_8); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2879, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_v_index_type = __pyx_t_2;
     __Pyx_XDECREF_SET(__pyx_v_name, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "classy.pyx":2873
+    /* "classy.pyx":2880
  * 
  *         for index_type, name in zip(indices, names):
  *             tmparray = np.empty((k_size,tau_size))             # <<<<<<<<<<<<<<
  *             for index_k in range(k_size):
  *                 for index_tau in range(tau_size):
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2873, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2880, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_empty); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2873, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_empty); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2880, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyInt_From_int(__pyx_v_k_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2873, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_From_int(__pyx_v_k_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 2880, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_tau_size); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2873, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_tau_size); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2880, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_22 = PyTuple_New(2); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 2873, __pyx_L1_error)
+    __pyx_t_22 = PyTuple_New(2); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 2880, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_22);
     __Pyx_GIVEREF(__pyx_t_7);
     PyTuple_SET_ITEM(__pyx_t_22, 0, __pyx_t_7);
@@ -42263,17 +42347,17 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
     __pyx_t_6 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_5, __pyx_t_22) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_22);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2873, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2880, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_dsds_double(__pyx_t_6, PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 2873, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_dsds_double(__pyx_t_6, PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 2880, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __PYX_XDEC_MEMVIEW(&__pyx_v_tmparray, 1);
     __pyx_v_tmparray = __pyx_t_9;
     __pyx_t_9.memview = NULL;
     __pyx_t_9.data = NULL;
 
-    /* "classy.pyx":2874
+    /* "classy.pyx":2881
  *         for index_type, name in zip(indices, names):
  *             tmparray = np.empty((k_size,tau_size))
  *             for index_k in range(k_size):             # <<<<<<<<<<<<<<
@@ -42285,7 +42369,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
     for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
       __pyx_v_index_k = __pyx_t_12;
 
-      /* "classy.pyx":2875
+      /* "classy.pyx":2882
  *             tmparray = np.empty((k_size,tau_size))
  *             for index_k in range(k_size):
  *                 for index_tau in range(tau_size):             # <<<<<<<<<<<<<<
@@ -42297,7 +42381,7 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
       for (__pyx_t_24 = 0; __pyx_t_24 < __pyx_t_23; __pyx_t_24+=1) {
         __pyx_v_index_tau = __pyx_t_24;
 
-        /* "classy.pyx":2876
+        /* "classy.pyx":2883
  *             for index_k in range(k_size):
  *                 for index_tau in range(tau_size):
  *                     tmparray[index_k][index_tau] = sources_ptr[index_md][index_ic*tp_size+index_type][index_tau*k_size + index_k];             # <<<<<<<<<<<<<<
@@ -42317,25 +42401,25 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
         } else if (unlikely(__pyx_t_25 >= __pyx_v_tmparray.shape[1])) __pyx_t_26 = 1;
         if (unlikely(__pyx_t_26 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_26);
-          __PYX_ERR(0, 2876, __pyx_L1_error)
+          __PYX_ERR(0, 2883, __pyx_L1_error)
         }
         *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_tmparray.data + __pyx_t_13 * __pyx_v_tmparray.strides[0]) ) + __pyx_t_25 * __pyx_v_tmparray.strides[1]) )) = (((__pyx_v_sources_ptr[__pyx_v_index_md])[((__pyx_v_index_ic * __pyx_v_tp_size) + __pyx_v_index_type)])[((__pyx_v_index_tau * __pyx_v_k_size) + __pyx_v_index_k)]);
       }
     }
 
-    /* "classy.pyx":2878
+    /* "classy.pyx":2885
  *                     tmparray[index_k][index_tau] = sources_ptr[index_md][index_ic*tp_size+index_type][index_tau*k_size + index_k];
  * 
  *             sources[name] = np.asarray(tmparray)             # <<<<<<<<<<<<<<
  * 
  *         return (sources, np.asarray(k_array), np.asarray(tau_array))
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2878, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2885, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_22 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_asarray); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 2878, __pyx_L1_error)
+    __pyx_t_22 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_asarray); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 2885, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_22);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = __pyx_memoryview_fromslice(__pyx_v_tmparray, 2, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2878, __pyx_L1_error)
+    __pyx_t_8 = __pyx_memoryview_fromslice(__pyx_v_tmparray, 2, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2885, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __pyx_t_5 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_22))) {
@@ -42350,13 +42434,13 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
     __pyx_t_6 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_22, __pyx_t_5, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_22, __pyx_t_8);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2878, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2885, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
-    if (unlikely(PyDict_SetItem(__pyx_v_sources, __pyx_v_name, __pyx_t_6) < 0)) __PYX_ERR(0, 2878, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_sources, __pyx_v_name, __pyx_t_6) < 0)) __PYX_ERR(0, 2885, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "classy.pyx":2872
+    /* "classy.pyx":2879
  *               names.append("theta_ncdm[{}]".format(incdm))
  * 
  *         for index_type, name in zip(indices, names):             # <<<<<<<<<<<<<<
@@ -42366,18 +42450,18 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "classy.pyx":2880
+  /* "classy.pyx":2887
  *             sources[name] = np.asarray(tmparray)
  * 
  *         return (sources, np.asarray(k_array), np.asarray(tau_array))             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_22 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_asarray); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  __pyx_t_22 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_asarray); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_k_array, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_k_array, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_8 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_22))) {
@@ -42392,15 +42476,15 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_1 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_22, __pyx_t_8, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_22, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_asarray); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_asarray); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_tau_array, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_tau_array, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
@@ -42415,10 +42499,10 @@ static PyObject *__pyx_pf_6classy_5Class_182get_sources(struct __pyx_obj_6classy
   __pyx_t_22 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = PyTuple_New(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2880, __pyx_L1_error)
+  __pyx_t_8 = PyTuple_New(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 2887, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_INCREF(__pyx_v_sources);
   __Pyx_GIVEREF(__pyx_v_sources);
@@ -58403,6 +58487,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_version_info, __pyx_k_version_info, sizeof(__pyx_k_version_info), 0, 0, 1, 1},
   {&__pyx_n_s_viewdictitems, __pyx_k_viewdictitems, sizeof(__pyx_k_viewdictitems), 0, 0, 1, 1},
   {&__pyx_n_s_viewitems, __pyx_k_viewitems, sizeof(__pyx_k_viewitems), 0, 0, 1, 1},
+  {&__pyx_n_u_weyl, __pyx_k_weyl, sizeof(__pyx_k_weyl), 0, 1, 0, 1},
+  {&__pyx_n_u_weyldot, __pyx_k_weyldot, sizeof(__pyx_k_weyldot), 0, 1, 0, 1},
   {&__pyx_n_u_xi_idr, __pyx_k_xi_idr, sizeof(__pyx_k_xi_idr), 0, 1, 0, 1},
   {&__pyx_n_s_xrange, __pyx_k_xrange, sizeof(__pyx_k_xrange), 0, 0, 1, 1},
   {&__pyx_n_u_y_sd, __pyx_k_y_sd, sizeof(__pyx_k_y_sd), 0, 1, 0, 1},
@@ -58431,7 +58517,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   #endif
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 1184, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(0, 2214, __pyx_L1_error)
-  __pyx_builtin_zip = __Pyx_GetBuiltinName(__pyx_n_s_zip); if (!__pyx_builtin_zip) __PYX_ERR(0, 2872, __pyx_L1_error)
+  __pyx_builtin_zip = __Pyx_GetBuiltinName(__pyx_n_s_zip); if (!__pyx_builtin_zip) __PYX_ERR(0, 2879, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(2, 945, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 134, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 149, __pyx_L1_error)

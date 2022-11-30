@@ -2791,6 +2791,13 @@ make        nonlinear_scale_cb(z, z_size)
         if self.pt.has_source_delta_cb:
             indices.append(self.pt.index_tp_delta_cb)
             names.append("delta_cb")
+        #mod
+        if self.pt.has_source_delta_g:
+            indices.append(self.pt.index_tp_weyl)
+            names.append("weyl")
+        if self.pt.has_source_delta_g:
+            indices.append(self.pt.index_tp_weyldot)
+            names.append("weyldot")
         if self.pt.has_source_delta_g:
             indices.append(self.pt.index_tp_delta_g)
             names.append("delta_g")
