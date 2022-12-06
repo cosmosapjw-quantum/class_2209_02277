@@ -1,0 +1,106 @@
+##submiting a new job
+sbatch -J pjw_polytest --nodes=1 --ntasks=task_num --cpus-per-task=core_per_task -p T128R9 --nodelist=node12 -o /home/jwpark/mcmc/output_polytest.txt /home/jwpark/mcmc/sh_file.sh
+
+##checking node output
+gedit /home/jwpark/mcmc/terminal/output_file
+
+##checking node cpu usage
+scontrol show nodes node5
+
+##checking job
+scontrol show job job_num | grep 'NodeList'
+
+##show all jobs in all nodes
+squeue
+
+##cancel job
+scancel job_num
+
+-----this is only for cobaya program-----
+
+##default shell file configuration
+---
+#!/bin/sh
+
+##setting intel oneapi vars
+source /appl/intel/oneapi/setvars.sh
+source /appl/intel/oneapi/mpi/2021.2.0/env/vars.sh
+source /appl/intel/oneapi/compiler/latest/env/vars.sh intel64
+source /appl/intel/oneapi/mpi/latest/env/vars.sh intel64
+export I_MPI_F90=ifort
+
+##check whether mpi works
+mpirun -n 2 python -c "from mpi4py import MPI, __version__; print(__version__ if MPI.COMM_WORLD.Get_rank() else '')"
+
+##cobaya-run setting
+mpirun -n task_num --map-by socket:PE=core_per_task cobaya-run yaml_file.yaml -p /home/jwpark/comodata -o chains/output_name -r
+
+## if forcing restart, replace '-r' with '-f'
+## if want debug output, add '--debug > debug_file'
+
+wait
+---
+
+##before running gui feature
+conda activate py39forge
+
+##default CAMB setting
+theory:
+  camb:
+    path: /home/jwpark/CAMB
+
+##default new parameter setting
+params:
+  scalmass:
+    prior:
+      min: 0
+      max: 1
+    ref:
+      dist: norm
+      loc: 5e-6
+      scale: 1e-6
+    proposal: 1e-5
+    latex: m_{\varphi}
+  omega_inverse: 0
+
+##default mcmc setting
+sampler:
+  mcmc:
+    drag: true
+    oversample_power: 0.4
+    proposal_scale: 1.9
+    covmat: auto
+    Rminus1_stop: 0.01
+    Rminus1_cl_stop: 0.2
+
+##tau setting for polychord(gaussian restriction)
+  tau:
+    prior:
+      dist: norm
+      loc: 0.07
+      scale: 0.02
+    ref:
+      dist: norm
+      loc: 0.07
+      scale: 0.01
+    proposal: 0.005
+    latex: \tau_\mathrm{reio}
+
+##low precision polychord setting
+sampler:
+  polychord:
+    nlive: 10d
+    precision_criterion: 0.1
+
+##default polychord setting
+sampler:
+  polychord:
+    nlive: 25d
+    precision_criterion: 0.001
+
+##checking live points in polychord
+gedit /home/jwpark/mcmc/chains/polytest_polychord_raw/polytest_phys_live.txt
+
+##checking overall progress in polychord
+ls /home/jwpark/mcmc/chains/* -l #check
+ls /home/jwpark/mcmc/chains/polytest_polychord_raw/* -l #check
